@@ -37,7 +37,7 @@ def download_choosen_format(bot, update):
             bot.send_document(chat_id=query.message.chat_id, document=open(f, 'rb'))
 
 
-updater = Updater(token=YOUR_TOKEN)
+updater = Updater(token='5284972746:AAGUlVOvwmhFb59aVAgDTv1NKGlfVt1QMPs')
 
 updater.dispatcher.add_handler(MessageHandler(Filters.text, get_format))
 updater.dispatcher.add_handler(CallbackQueryHandler(download_choosen_format))
