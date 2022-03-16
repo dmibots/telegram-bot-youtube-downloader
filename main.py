@@ -15,7 +15,7 @@ def get_format(bot, update):
     try:
         video = Video(update.message.text, init_keyboard=True)
     except BadLink:
-        update.message.reply_text("Bad link")
+        update.message.reply_text("Link Buruk")
     else:
         reply_markup = InlineKeyboardMarkup(video.keyboard)
         update.message.reply_text('Choose format:', reply_markup=reply_markup)
@@ -25,7 +25,7 @@ def download_choosen_format(bot, update):
     query = update.callback_query
     resolution_code, link = query.data.split(' ', 1)
     
-    bot.edit_message_text(text="Downloading...",
+    bot.edit_message_text(text="Sedang mengunduh... Sabar ya...",
                           chat_id=query.message.chat_id,
                           message_id=query.message.message_id)
     
